@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import Home from './pages/Home';
+
+
+
+const App=() => {
   return (
     <div className="App">
-     <p className='h-7 bg-slate-600'>hhhj</p>
+      <Home/>
     </div>
   );
 }
