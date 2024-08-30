@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { patchUser } from "../api";
-
+import { patchUser } from '../api';
 
 const Card = ({ id, firstName, lastName, email, company, removeElem }) => {
   const [formData, setFormData] = useState({
-    firstName,
-    lastName,
-    email,
-    company,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    company: company,
   });
 
   const [open, setOpen] = useState(false);
 
   const handleUpdate = async (updatedFormData) => {
     try {
-      const response = await patchUser(updatedFormData, id);
+      let response = await patchUser(updatedFormData, id);
 
-      if (response.status === '200') {
+      if (response.status === 200) {
         setFormData(updatedFormData);
-        setOpen(false); // Close modal after successful update
       }
     } catch (error) {
       console.log(error);
@@ -30,50 +28,48 @@ const Card = ({ id, firstName, lastName, email, company, removeElem }) => {
     removeElem(id);
   };
 
+  const handleEditClick = () => {
+    setOpen(true);
+  };
+
   return (
-    <div className="flex flex-col items-center justify-between bg-white hover:scale-110 transition-all duration-300 ease-in gap-3 p-4 mt-10 ml-5 rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:shadow-[0px_0px_95px_53px_#00000024] relative">
+    <div className="flex flex-col items-center bg-slate-100 hover:scale-110 transition-all duration-300 ease-in gap-4 p-8 mt-8 rounded-xl shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:shadow-[0px_0px_95px_53px_#00000024] relative w-full max-w-lg">
       {/* Card Number */}
-      <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs">
-        {/* You can set this to any card number or index */}
+      <div className="absolute top-2 right-2 bg-blue-500 text-white px-3 py-1 rounded-full text-xs">
         #{id}
       </div>
 
-      <div>
-        <p className="text-gray-700 font-semibold text-lg text-left truncate mt-1 w-40">
-          {formData.firstName}
+      <div className='mx-auto' >
+      <div >
+        <p className="text-gray-700 font-semibold text-xl text-left truncate">
+          First Name: {formData.firstName}
         </p>
       </div>
 
       <div>
-        <p className="text-gray-700 font-semibold text-lg text-left truncate mt-1 w-40">
-          {formData.lastName}
+        <p className="text-gray-700 font-semibold text-xl text-left truncate">
+          Last Name: {formData.lastName}
         </p>
       </div>
 
       <div>
-        <p className="text-gray-600 font-normal text-sm text-left">
-          {formData.email}
+        <p className="text-gray-700 font-semibold text-base text-left">
+          Email: {formData.email}
         </p>
       </div>
 
       <div>
-        <p className="text-gray-500 font-normal text-sm text-left">
-          {formData.company}
+        <p className="text-gray-700 font-semibold text-base text-left">
+          Company: {formData.company}
         </p>
       </div>
 
-      <div className="flex justify-between items-center w-full mt-5">
-        {/* Edit Button */}
-        <button
-          className="border-2 border-gray-700 text-gray-700 uppercase font-semibold px-3 py-1 rounded-full text-[12px] transition-all duration-300 ease-in hover:text-white hover:bg-gray-700"
-          onClick={() => setOpen(true)}
-        >
-          Edit
-        </button>
-
+      
+      </div>
+      <div className="flex justify-end items-center w-full mt-4">
         {/* Delete Button */}
         <button
-          className="border-2 border-red-600 text-red-600 uppercase font-semibold px-3 py-1 rounded-full text-[12px] transition-all duration-300 ease-in hover:text-white hover:bg-red-600"
+          className="border-2 border-red-600 text-red-600 uppercase font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300 ease-in hover:text-white hover:bg-red-600 mx-auto"
           onClick={handleDelete}
         >
           Delete

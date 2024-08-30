@@ -97,7 +97,7 @@ export default function Home() {
       <Navbar handleAdd={handleAdd} />
 
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
           {/* Rendering ThreeDCard components for each user */}
           {filteredData && currentPageData.map((elem) => (
             <Card
