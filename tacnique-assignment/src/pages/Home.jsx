@@ -1,4 +1,3 @@
-// Importing necessary dependencies and components
 import * as React from 'react';
 
 import { useEffect, useState } from "react";
@@ -6,6 +5,7 @@ import { addnewUser, deleteUser, getAllUsers } from '../api';
 import Pagination from '@mui/material/Pagination';
 import Navbar from "../components/Navbar"
 import Card from '../components/card';
+import Heading from '../components/Heading';
 
 // Main component function
 export default function Home() {
@@ -95,9 +95,13 @@ export default function Home() {
     <>
       {/* Navbar component for adding new user */}
       <Navbar handleAdd={handleAdd} />
+      <Heading/>
 
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      
+
+      <main className="flex min-h-screen flex-col items-center justify-between pl-24 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
+       
           {/* Rendering ThreeDCard components for each user */}
           {filteredData && currentPageData.map((elem) => (
             <Card
@@ -113,6 +117,7 @@ export default function Home() {
         </div>
 
         {/* Pagination component */}
+        <div className='mt-6'>
         <Pagination
           count={totalPages}
           page={page}
@@ -127,6 +132,7 @@ export default function Home() {
             },
           }}
         />
+        </div>
       </main>
     </>
   );
