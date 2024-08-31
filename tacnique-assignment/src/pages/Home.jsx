@@ -99,7 +99,7 @@ export default function Home() {
 
       
 
-      <main className="flex min-h-screen flex-col items-center justify-between pl-24 mt-16">
+      <main className="flex min-h-screen flex-col items-center justify-between p-24git">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full">
        
           {/* Rendering ThreeDCard components for each user */}
