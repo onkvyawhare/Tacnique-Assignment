@@ -128,7 +128,7 @@ export default function Home() {
           color="primary"
           sx={{
             '& .MuiPaginationItem-page': {
-              color: 'white', // Styling pagination numbers to be white
+              color: 'black', // Styling pagination numbers to be white
             },
           }}
         />
