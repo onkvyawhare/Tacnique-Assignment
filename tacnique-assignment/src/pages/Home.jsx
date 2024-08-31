@@ -110,7 +110,7 @@ export default function Home() {
               firstName={elem.name.split(' ')[0]}
               lastName={elem.name.split(' ')[1]}
               email={elem.email}
-              company={elem.company.name}
+              department={elem.company.name}
               removeElem={handleDelete}
             />
           ))}

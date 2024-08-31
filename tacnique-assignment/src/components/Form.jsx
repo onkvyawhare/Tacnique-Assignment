@@ -5,7 +5,7 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-const Form = ({ id, firstName, lastName, email,company, onUpdate, add, onAdd }) => {
+const Form = ({ id, firstName, lastName, email,department, onUpdate, add, onAdd }) => {
 
    
       // State variable to control modal open/close
@@ -33,7 +33,7 @@ const Form = ({ id, firstName, lastName, email,company, onUpdate, add, onAdd }) 
     firstName: add ? "" : firstName,
     lastName: add ? "" : lastName,
     email: add ? "" : email,
-    company: add ? "" : company,
+    department: add ? "" : department,
   });
 
   // Function to handle input change
@@ -113,10 +113,10 @@ const Form = ({ id, firstName, lastName, email,company, onUpdate, add, onAdd }) 
 
             {/* Input field for company */}
             <TextField
-              label="Company"
+              label="department"
               variant="outlined"
-              name="company"
-              value={formData.company}
+              name="department"
+              value={formData.department}
               onChange={handleChange}
               required
               fullWidth

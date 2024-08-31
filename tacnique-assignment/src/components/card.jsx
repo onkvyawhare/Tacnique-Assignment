@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Form from './Form';
 import { patchUser } from '../api';
 
-const Card = ({ id, firstName, lastName, email, company, removeElem }) => {
+const Card = ({ id, firstName, lastName, email,department, removeElem }) => {
   const [formData, setFormData] = useState({
     firstName: firstName,
     lastName: lastName,
     email: email,
-    company: company,
+    department:department,
   });
 
   const [open, setOpen] = useState(false);
@@ -58,7 +58,7 @@ const Card = ({ id, firstName, lastName, email, company, removeElem }) => {
 
     <div>
       <p className="text-gray-700 font-semibold text-sm md:text-base text-left">
-        Company: {formData.company}
+        department: {formData.department}
       </p>
     </div>
   </div>
@@ -80,7 +80,7 @@ const Card = ({ id, firstName, lastName, email, company, removeElem }) => {
         firstName={formData.firstName}
         lastName={formData.lastName}
         email={formData.email}
-        company={formData.company}
+        department={formData.department}
         onUpdate={handleUpdate}
         add={false} // Indicates that this is an edit operation
         onAdd={() => {}} // No action needed here
