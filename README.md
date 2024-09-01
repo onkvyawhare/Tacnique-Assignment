@@ -1,6 +1,6 @@
 # User Management Dashboard
 
-This is a simple web application developed with Next.js where users can view, add, edit, and delete user details from a mock backend API provided by JSONPlaceholder.
+This is a simple web application developed with React.js where users can view, add, edit, and delete user details from a mock backend API provided by JSONPlaceholder.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ This is a simple web application developed with Next.js where users can view, ad
 
 ## Introduction
 
-This project is developed as a demonstration of a User Management Dashboard using Next.js. It interacts with the JSONPlaceholder API to fetch and manipulate user data.
+This project is developed as a demonstration of a User Management Dashboard using React.js. It interacts with the JSONPlaceholder API to fetch and manipulate user data.
 
 ## Requirements
 
@@ -34,7 +34,6 @@ This project is developed as a demonstration of a User Management Dashboard usin
 
 ### Bonus :
 - Implemented pagination or infinite scrolling for the user list.
-- Added client-side validation for the user input form.
 - Created the interface responsive.
 
 ## Technologies Used
